@@ -144,7 +144,7 @@ defmodule AshPostgres.MigrationGenerator do
 
         uninstall =
           Enum.map_join(to_install, "\n", fn extension ->
-            "execute(\"DROP EXTENSION IF EXISTS \\\"#{extension}\\\"\")"
+            "# execute(\"DROP EXTENSION IF EXISTS \\\"#{extension}\\\"\")"
           end)
 
         contents = """
